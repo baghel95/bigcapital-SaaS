@@ -1,24 +1,21 @@
 import intl from 'react-intl-universal';
+import { BRAND } from './brand';
 
 export const getFooterLinks = (): Array<{ title: string; link: string }> => [
   {
-    title: intl.get('blog'),
-    link: 'https://docs.bigcapital.ly/blog',
+    title: intl.get('docs'),
+    link: BRAND.docsUrl,
   },
   {
     title: intl.get('community'),
-    link: 'https://discord.com/invite/c8nPBJafeb',
+    link: BRAND.communityUrl,
   },
   {
-    title: intl.get('support'),
-    link: 'https://discord.com/invite/c8nPBJafeb',
+    title: 'Source code',
+    link: BRAND.sourceCodeUrl,
   },
   {
-    title: intl.get('docs'),
-    link: 'https://docs.bigcapital.ly',
-  },
-  {
-    title: 'Bigcapital',
-    link: 'http://bigcapital.ly',
+    title: BRAND.name,
+    link: BRAND.websiteUrl,
   },
 ];

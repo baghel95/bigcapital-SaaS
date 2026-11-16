@@ -1,3 +1,4 @@
+import { BRAND_NAME } from '@/common/constants/brand';
 import * as path from 'path';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
@@ -30,7 +31,7 @@ export class SendInviteUsersMailMessage {
     const baseURL = this.configService.get('app.baseUrl');
 
     const mail = new Mail()
-      .setSubject(`${fromUser.firstName} has invited you to join a Bigcapital`)
+      .setSubject(`${fromUser.firstName} has invited you to join ${BRAND_NAME}`)
       .setView('mail/UserInvite.html')
       .setTo(invite.email)
       .setAttachments([

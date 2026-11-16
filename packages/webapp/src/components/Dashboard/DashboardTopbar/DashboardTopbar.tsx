@@ -30,6 +30,7 @@ import { DRAWERS } from '@/constants/drawers';
 import {
   COMMUNITY_BIGCAPITAL_LINK,
   DOCS_BIGCAPITAL_LINK,
+  SOURCE_CODE_LINK,
 } from '@/constants/routes';
 import { withDashboard } from '@/containers/Dashboard/withDashboard';
 import { withDashboardActions } from '@/containers/Dashboard/withDashboardActions';
@@ -177,6 +178,11 @@ function DashboardTopbar({
                   <MenuItem
                     text={'Community support'}
                     onClick={() => window.open(COMMUNITY_BIGCAPITAL_LINK)}
+                    labelElement={<Icon icon={'share'} iconSize={16} />}
+                  />
+                  <MenuItem
+                    text={'Source code (AGPL-3.0)'}
+                    onClick={() => window.open(SOURCE_CODE_LINK)}
                     labelElement={<Icon icon={'share'} iconSize={16} />}
                   />
                   <MenuItem

@@ -1,3 +1,4 @@
+import { BRAND_NAME } from '@/common/constants/brand';
 import { Injectable } from '@nestjs/common';
 import * as path from 'path';
 import { SystemUser } from '../System/models/SystemUser';
@@ -23,7 +24,7 @@ export class AuthenticationMailMesssages {
     const baseURL = this.configService.get('app.baseUrl');
 
     return new Mail()
-      .setSubject('Bigcapital - Password Reset')
+      .setSubject(`${BRAND_NAME} - Password Reset`)
       .setView('mail/ResetPassword.html')
       .setTo(user.email)
       .setAttachments([
@@ -58,7 +59,7 @@ export class AuthenticationMailMesssages {
     const verifyUrl = `${baseURL}/auth/email_confirmation?token=${token}&email=${email}`;
 
     return new Mail()
-      .setSubject('Bigcapital - Verify your email')
+      .setSubject(`${BRAND_NAME} - Verify your email`)
       .setView('mail/SignupVerifyEmail.html')
       .setTo(email)
       .setAttachments([
