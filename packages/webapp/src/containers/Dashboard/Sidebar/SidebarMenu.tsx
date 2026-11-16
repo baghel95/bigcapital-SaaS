@@ -1,4 +1,5 @@
 import { Intent, Menu } from '@blueprintjs/core';
+import type { IconName } from '@blueprintjs/core';
 import React from 'react';
 import { useIsSidebarMenuItemActive } from './hooks';
 import type { ISidebarMenuItem } from '@/containers/Dashboard/Sidebar/interfaces';
@@ -17,7 +18,30 @@ interface SidebarMenuItemComponentProps {
   onClick?: (event: React.MouseEvent) => void;
   active?: boolean;
   intent?: Intent;
+  icon?: IconName;
 }
+
+// Ganak: icons for top-level sidebar entries, keyed by overlay id or link.
+const SIDEBAR_ICONS: Record<string, IconName> = {
+  '/': 'home',
+  Items: 'cube',
+  Sales: 'document',
+  Purchases: 'shopping-cart',
+  Contacts: 'people',
+  Financial: 'book',
+  Cashflow: 'bank-account',
+  Expenses: 'credit-card',
+  Reports: 'chart',
+  '/preferences': 'cog',
+};
+
+const getSidebarIcon = (item: ISidebarMenuItem): IconName | undefined => {
+  const key =
+    ('overlayId' in item && item.overlayId) ||
+    ('href' in item && (item as { href?: string }).href) ||
+    '';
+  return SIDEBAR_ICONS[key as string];
+};
 
 // The shared `MenuItem` is a class component with untyped props (a forked and
 // customized Blueprint menu item); this boundary cast keeps its props checked
@@ -42,6 +66,7 @@ function SidebarMenuItem({ item, index }: SidebarMenuItemProps) {
       onClick={item.onClick}
       active={isActive}
       intent={Intent.NONE}
+      icon={getSidebarIcon(item)}
     />
   );
 }

@@ -1,0 +1,38 @@
+// Ganak "Indigo Pro" — SCSS-level overrides (see packages/webapp/DESIGN.md).
+// Imported at the end of _variables.scss so Blueprint compiles with these values.
+
+$ganak-indigo-600: #4f46e5;
+$ganak-indigo-700: #4338ca;
+$ganak-indigo-800: #3730a3;
+
+$blue1: $ganak-indigo-600;
+$blue2: $ganak-indigo-700;
+$blue3: $ganak-indigo-700;
+
+$pt-link-color: $ganak-indigo-600;
+$pt-intent-primary: $ganak-indigo-600;
+
+$pt-font-family:
+  'Inter Variable',
+  'Inter',
+  'Noto Sans',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Icons16,
+  sans-serif;
+
+$pt-border-radius: 8px;
+$pt-font-size: 14px;
+$pt-button-height: 36px;
+$pt-input-height: 36px;
+
+$pt-popover-box-shadow:
+  0 0 0 1px rgba(15, 23, 42, 0.06),
+  0 4px 16px rgba(15, 23, 42, 0.08);
+
+$button-background-color: #ffffff;
+$button-background-color-hover: #f1f5f9;
+$button-background-color-disabled: #f1f5f9;

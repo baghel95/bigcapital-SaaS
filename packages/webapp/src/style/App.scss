@@ -315,3 +315,5 @@ span.table-tooltip-overview-target {
 :root {
   --top-offset: 60px;
 }
+// Ganak theme (runtime overrides) — keep last
+@import './ganak-theme';

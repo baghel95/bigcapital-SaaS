@@ -55,8 +55,8 @@ export function DashboardQuickSearchButton(
   }
   return (
     <Button
-      className={Classes.MINIMAL}
-      icon={<Icon icon={'search-24'} iconSize={20} />}
+      className={`${Classes.MINIMAL} g-search-trigger`}
+      icon={<Icon icon={'search-24'} iconSize={18} />}
       text={<T id={'quick_find'} />}
       {...rest}
     />

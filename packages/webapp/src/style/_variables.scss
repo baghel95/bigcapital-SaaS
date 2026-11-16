@@ -727,3 +727,6 @@ $control-box-shadow: inset 0 0 0 1px #666 !default;
 $drawer-background-color: $white !default;
 $dark-drawer-background-color: $dark-gray2 !default;
 
+
+// Ganak theme (SCSS-level overrides)
+@import 'ganak-tokens';
