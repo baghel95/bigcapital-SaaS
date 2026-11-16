@@ -286,3 +286,95 @@
   color: var(--g-text-muted);
   margin: 8px 0 12px;
 }
+
+// Getting started checklist ---------------------------------------------------
+.g-start {
+  margin-bottom: 16px;
+
+  .g-card__header {
+    border-bottom: 0;
+    padding-bottom: 8px;
+  }
+  &__progress {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: var(--g-text-muted);
+  }
+  &__bar {
+    height: 4px;
+    margin: 0 20px 8px;
+    border-radius: 999px;
+    background: var(--g-surface-2);
+    overflow: hidden;
+
+    span {
+      display: block;
+      height: 100%;
+      background: var(--g-primary);
+      border-radius: 999px;
+      transition: width 200ms ease;
+    }
+  }
+  &__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0 8px 8px;
+  }
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+
+    &:hover {
+      background: var(--g-surface-2);
+    }
+    &.is-done strong {
+      color: var(--g-text-muted);
+      text-decoration: line-through;
+    }
+  }
+  &__check {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--g-border-strong);
+
+    .is-done & {
+      background: var(--g-success);
+      border-color: var(--g-success);
+
+      .bp4-icon {
+        color: #fff;
+        fill: #fff;
+      }
+    }
+  }
+  &__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--g-text);
+    }
+    span {
+      font-size: 12.5px;
+      color: var(--g-text-muted);
+    }
+  }
+  &__cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--g-primary);
+    white-space: nowrap;
+  }
+}

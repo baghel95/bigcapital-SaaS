@@ -8,6 +8,7 @@ import {
   useCurrentOrganization,
 } from '@/hooks/query';
 import { useAuthenticatedAccount } from '@/hooks/query/users/queries';
+import { GettingStarted } from './GettingStarted';
 import '@/style/pages/HomePage/GanakDashboard.scss';
 
 // Fields read from the camel-cased API responses.
@@ -219,6 +220,8 @@ export function GanakDashboard() {
           <span>New invoice</span>
         </Link>
       </div>
+
+      <GettingStarted />
 
       <div className="g-kpis">
         <KpiCard

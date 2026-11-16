@@ -49,34 +49,40 @@ export function InvoiceFormFooterLeft() {
       </TermsConditsFormGroup>
 
       {/* --------- Payment Options --------- */}
-      <PaymentOptionsFormGroup
-        label={'Payment Options'}
-        name={'paymentMethodId'}
-      >
-        <PaymentOptionsText>
-          Select an online payment option to get paid faster{' '}
-          <Group spacing={6} style={{ marginLeft: 8 }}>
-            <VisaIcon />
-            <MastercardIcon />
-          </Group>
-          {isEmpty(paymentServices) ? (
-            <PaymentOptionsButton
-              intent={Intent.PRIMARY}
-              onClick={handleSetupPaymentsClick}
-              small
-              minimal
-            >
-              Setup payment gateways
-            </PaymentOptionsButton>
-          ) : (
-            <PaymentOptionsButtonPopver paymentMethods={paymentServices ?? []}>
-              <PaymentOptionsButton intent={Intent.PRIMARY} small minimal>
-                Payment Options
+      {/* Ganak: only shown once a payment gateway is connected; the card
+          gateway prompt does not apply to most Indian businesses. */}
+      {!isEmpty(paymentServices) && (
+        <PaymentOptionsFormGroup
+          label={'Payment Options'}
+          name={'paymentMethodId'}
+        >
+          <PaymentOptionsText>
+            Select an online payment option to get paid faster{' '}
+            <Group spacing={6} style={{ marginLeft: 8 }}>
+              <VisaIcon />
+              <MastercardIcon />
+            </Group>
+            {isEmpty(paymentServices) ? (
+              <PaymentOptionsButton
+                intent={Intent.PRIMARY}
+                onClick={handleSetupPaymentsClick}
+                small
+                minimal
+              >
+                Setup payment gateways
               </PaymentOptionsButton>
-            </PaymentOptionsButtonPopver>
-          )}
-        </PaymentOptionsText>
-      </PaymentOptionsFormGroup>
+            ) : (
+              <PaymentOptionsButtonPopver
+                paymentMethods={paymentServices ?? []}
+              >
+                <PaymentOptionsButton intent={Intent.PRIMARY} small minimal>
+                  Payment Options
+                </PaymentOptionsButton>
+              </PaymentOptionsButtonPopver>
+            )}
+          </PaymentOptionsText>
+        </PaymentOptionsFormGroup>
+      )}
     </Stack>
   );
 }
