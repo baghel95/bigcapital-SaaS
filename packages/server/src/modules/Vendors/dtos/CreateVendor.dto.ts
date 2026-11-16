@@ -10,10 +10,10 @@ import {
   IsString,
   ValidateIf,
 } from 'class-validator';
-import { ContactAddressDto } from '@/modules/Customers/dtos/ContactAddress.dto';
+import { ContactGstFieldsDto } from '@/modules/Contacts/dtos/ContactGstFields.dto';
 import { IsOptional, ToNumber } from '@/common/decorators/Validators';
 
-export class CreateVendorDto extends ContactAddressDto {
+export class CreateVendorDto extends ContactGstFieldsDto {
   @ApiProperty({ required: false, description: 'Vendor opening balance' })
   @IsOptional()
   @IsInt()

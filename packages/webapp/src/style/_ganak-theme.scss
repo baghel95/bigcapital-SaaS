@@ -512,3 +512,23 @@ html body.bp4-dark .page-form {
   font-weight: 500;
   padding: 2px 10px;
 }
+
+// GSTIN live validation status (components/Gst/ContactGstSection.tsx)
+.g-gstin-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+
+  .bp4-icon {
+    fill: currentColor;
+    color: currentColor;
+  }
+  &--valid {
+    color: var(--g-success);
+  }
+  &--invalid {
+    color: var(--g-danger);
+  }
+}

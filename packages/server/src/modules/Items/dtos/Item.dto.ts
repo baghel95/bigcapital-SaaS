@@ -9,10 +9,34 @@ import {
   MaxLength,
   Min,
   IsNotEmpty,
+  registerDecorator,
+  ValidationOptions,
 } from 'class-validator';
+import { Transform } from 'class-transformer';
+import { validateHsnSac } from '@bigcapital/utils';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional, ToNumber } from '@/common/decorators/Validators';
 import { ITEM_UNITS, ItemUnit } from '../Items.constants';
+
+/** HSN (goods: 4, 6 or 8 digits) or SAC (services: 6 digits starting 99). */
+function IsHsnSac(validationOptions?: ValidationOptions) {
+  return function (object: object, propertyName: string) {
+    registerDecorator({
+      name: 'isHsnSac',
+      target: object.constructor,
+      propertyName,
+      options: {
+        message:
+          'HSN must be 4, 6 or 8 digits; SAC must be 6 digits starting with 99.',
+        ...validationOptions,
+      },
+      validator: {
+        validate: (value: unknown) =>
+          typeof value === 'string' && validateHsnSac(value).valid,
+      },
+    });
+  };
+}
 
 export class CommandItemDto {
   @IsString()
@@ -43,6 +67,22 @@ export class CommandItemDto {
     example: 'CHAIR-X2000',
   })
   code?: string;
+
+  @ApiProperty({
+    required: false,
+    nullable: true,
+    description: 'HSN (goods, 4/6/8 digits) or SAC (services, 99xxxx) code',
+    example: '847130',
+  })
+  @IsOptional()
+  @Transform(({ value }) => {
+    if (typeof value !== 'string') return value;
+    const code = value.replace(/[\s.]/g, '');
+    return code === '' ? null : code;
+  })
+  @IsString()
+  @IsHsnSac()
+  hsnSacCode?: string | null;
 
   @IsOptional()
   @ToNumber()

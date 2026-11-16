@@ -1,9 +1,9 @@
 import { IsBoolean, IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { ContactAddressDto } from './ContactAddress.dto';
+import { ContactGstFieldsDto } from '@/modules/Contacts/dtos/ContactGstFields.dto';
 import { IsOptional } from '@/common/decorators/Validators';
 
-export class EditCustomerDto extends ContactAddressDto {
+export class EditCustomerDto extends ContactGstFieldsDto {
   @ApiProperty({ required: true, description: 'Customer type' })
   @IsString()
   @IsNotEmpty()

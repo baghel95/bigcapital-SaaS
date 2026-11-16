@@ -1,3 +1,7 @@
+import {
+  contactGstInitialValues,
+  transformGstFormToRequest,
+} from '@/components/Gst/ContactGstSection';
 import { useFormikContext } from 'formik';
 import { first } from 'lodash';
 import moment from 'moment';
@@ -30,6 +34,11 @@ export type CustomerFormValues = {
   workPhone: string;
   personalPhone: string;
   website: string;
+
+  // India GST
+  gstTreatment: string;
+  gstin: string;
+  placeOfSupply: string;
   note: string;
   active: boolean | string;
 
@@ -71,6 +80,8 @@ export const defaultInitialValues: CustomerFormValues = {
   workPhone: '',
   personalPhone: '',
   website: '',
+
+  ...contactGstInitialValues,
   note: '',
   active: true,
 
@@ -141,6 +152,7 @@ export const transformFormToCreateRequest = (
   companyName: values.companyName,
   code: values.code,
   website: values.website,
+  ...transformGstFormToRequest(values),
   email: values.email,
   workPhone: values.workPhone,
   personalPhone: values.personalPhone,
@@ -184,6 +196,7 @@ export const transformFormToEditRequest = (
   companyName: values.companyName,
   code: values.code,
   website: values.website,
+  ...transformGstFormToRequest(values),
   email: values.email,
   workPhone: values.workPhone,
   personalPhone: values.personalPhone,

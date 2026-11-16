@@ -23,6 +23,11 @@ export class Contact extends BaseModel {
   personalPhone?: string;
   website?: string;
 
+  // India GST
+  gstin?: string | null;
+  gstTreatment?: string | null;
+  placeOfSupply?: string | null;
+
   billingAddress1?: string;
   billingAddress2?: string;
   billingAddressCity?: string;

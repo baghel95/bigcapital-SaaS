@@ -6,6 +6,8 @@ import { CustomerFormFinancialSection } from './CustomerFormFinancialSection';
 import { CustomerFormNotesSection } from './CustomerFormNotesSection';
 import { CustomerShippingAddress } from './CustomerShippingAddress';
 import { Box } from '@/components';
+import { ContactGstSection } from '@/components/Gst/ContactGstSection';
+import { CustomerFormSectionTitle } from './CustomerFormSectionTitle';
 
 const customerFormSectionDividerClass = css`
   margin: 20px 0;
@@ -15,6 +17,11 @@ export function CustomerFormSections() {
   return (
     <Box>
       <CustomerFormBasicSection />
+      <Divider className={customerFormSectionDividerClass} />
+
+      <ContactGstSection
+        title={<CustomerFormSectionTitle>GST details</CustomerFormSectionTitle>}
+      />
       <Divider className={customerFormSectionDividerClass} />
 
       <CustomerFormFinancialSection />

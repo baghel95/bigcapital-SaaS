@@ -28555,7 +28555,7 @@
     }
   },
   "info": {
-    "title": "Bigcapital",
+    "title": "Ganak",
     "description": "Financial accounting software",
     "version": "1.0",
     "contact": {}
@@ -30057,6 +30057,12 @@
             "description": "Item code/SKU",
             "example": "CHAIR-X2000"
           },
+          "hsnSacCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "HSN (goods, 4/6/8 digits) or SAC (services, 99xxxx) code",
+            "example": "847130"
+          },
           "reorderPoint": {
             "type": "number",
             "description": "Stock level at which the item should be reordered (inventory items only)",
@@ -30230,6 +30236,12 @@
             "type": "string",
             "description": "Item code/SKU",
             "example": "CHAIR-X2000"
+          },
+          "hsnSacCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "HSN (goods, 4/6/8 digits) or SAC (services, 99xxxx) code",
+            "example": "847130"
           },
           "reorderPoint": {
             "type": "number",
@@ -36280,6 +36292,32 @@
             "type": "string",
             "description": "Shipping address state"
           },
+          "gstin": {
+            "type": "string",
+            "nullable": true,
+            "description": "GSTIN of the contact (15 characters)",
+            "example": "27AAPFU0939F1ZV"
+          },
+          "gstTreatment": {
+            "type": "string",
+            "nullable": true,
+            "description": "GST registration type of the contact",
+            "enum": [
+              "registered_regular",
+              "registered_composition",
+              "unregistered",
+              "consumer",
+              "overseas",
+              "sez",
+              "deemed_export"
+            ]
+          },
+          "placeOfSupply": {
+            "type": "string",
+            "nullable": true,
+            "description": "Default place of supply: 2-digit GST state code, or '96' for outside India",
+            "example": "27"
+          },
           "customerType": {
             "type": "string",
             "description": "Customer type",
@@ -36441,6 +36479,32 @@
           "shippingAddressState": {
             "type": "string",
             "description": "Shipping address state"
+          },
+          "gstin": {
+            "type": "string",
+            "nullable": true,
+            "description": "GSTIN of the contact (15 characters)",
+            "example": "27AAPFU0939F1ZV"
+          },
+          "gstTreatment": {
+            "type": "string",
+            "nullable": true,
+            "description": "GST registration type of the contact",
+            "enum": [
+              "registered_regular",
+              "registered_composition",
+              "unregistered",
+              "consumer",
+              "overseas",
+              "sez",
+              "deemed_export"
+            ]
+          },
+          "placeOfSupply": {
+            "type": "string",
+            "nullable": true,
+            "description": "Default place of supply: 2-digit GST state code, or '96' for outside India",
+            "example": "27"
           },
           "customerType": {
             "type": "string",
@@ -36878,6 +36942,32 @@
             "type": "string",
             "description": "Shipping address state"
           },
+          "gstin": {
+            "type": "string",
+            "nullable": true,
+            "description": "GSTIN of the contact (15 characters)",
+            "example": "27AAPFU0939F1ZV"
+          },
+          "gstTreatment": {
+            "type": "string",
+            "nullable": true,
+            "description": "GST registration type of the contact",
+            "enum": [
+              "registered_regular",
+              "registered_composition",
+              "unregistered",
+              "consumer",
+              "overseas",
+              "sez",
+              "deemed_export"
+            ]
+          },
+          "placeOfSupply": {
+            "type": "string",
+            "nullable": true,
+            "description": "Default place of supply: 2-digit GST state code, or '96' for outside India",
+            "example": "27"
+          },
           "openingBalance": {
             "type": "number",
             "description": "Vendor opening balance"
@@ -37021,6 +37111,32 @@
           "shippingAddressState": {
             "type": "string",
             "description": "Shipping address state"
+          },
+          "gstin": {
+            "type": "string",
+            "nullable": true,
+            "description": "GSTIN of the contact (15 characters)",
+            "example": "27AAPFU0939F1ZV"
+          },
+          "gstTreatment": {
+            "type": "string",
+            "nullable": true,
+            "description": "GST registration type of the contact",
+            "enum": [
+              "registered_regular",
+              "registered_composition",
+              "unregistered",
+              "consumer",
+              "overseas",
+              "sez",
+              "deemed_export"
+            ]
+          },
+          "placeOfSupply": {
+            "type": "string",
+            "nullable": true,
+            "description": "Default place of supply: 2-digit GST state code, or '96' for outside India",
+            "example": "27"
           },
           "salutation": {
             "type": "string",

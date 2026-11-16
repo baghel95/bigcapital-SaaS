@@ -8,9 +8,9 @@ import {
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional, ToNumber } from '@/common/decorators/Validators';
-import { ContactAddressDto } from './ContactAddress.dto';
+import { ContactGstFieldsDto } from '@/modules/Contacts/dtos/ContactGstFields.dto';
 
-export class CreateCustomerDto extends ContactAddressDto {
+export class CreateCustomerDto extends ContactGstFieldsDto {
   @ApiProperty({
     required: true,
     description: 'Customer type',

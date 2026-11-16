@@ -7,6 +7,8 @@ export interface ItemFormValues {
   name: string;
   type: ItemFormType;
   code: string;
+  /** HSN (goods) or SAC (services) code for India GST. */
+  hsnSacCode: string;
   reorderPoint: string | number;
   unit: string;
   costPrice: string | number;

@@ -4,7 +4,7 @@ import {
   GST_STATES_BY_CODE,
   GstSupplyType,
   PLACE_OF_SUPPLY_OUTSIDE_INDIA,
-} from './IndiaGst.constants';
+} from "./constants";
 
 export interface GstLineInput {
   /** Line amount after discount, before or including tax (see `isTaxInclusive`). */
@@ -51,7 +51,7 @@ export class GstCalculationError extends Error {
     message?: string,
   ) {
     super(message ?? code);
-    this.name = 'GstCalculationError';
+    this.name = "GstCalculationError";
   }
 }
 

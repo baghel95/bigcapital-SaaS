@@ -37,6 +37,7 @@ const defaultInitialValues: ItemFormValues = {
   name: '',
   type: 'service',
   code: '',
+  hsnSacCode: '',
   reorderPoint: '',
   unit: DEFAULT_ITEM_UNIT,
   costPrice: '',

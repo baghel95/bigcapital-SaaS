@@ -22,6 +22,8 @@ export class Item extends TenantBaseModel {
   public readonly active: boolean;
   public readonly type: string;
   public readonly code: string;
+  /** HSN (goods) or SAC (services) code for India GST. */
+  public readonly hsnSacCode: string | null;
   public readonly unit: string;
   public readonly sellable: boolean;
   public readonly purchasable: boolean;

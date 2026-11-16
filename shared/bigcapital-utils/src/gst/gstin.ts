@@ -2,9 +2,9 @@ import {
   GST_ERRORS,
   GST_STATES_BY_CODE,
   LEGACY_GSTIN_STATE_CODES,
-} from './IndiaGst.constants';
+} from "./constants";
 
-const GSTIN_CHARSET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const GSTIN_CHARSET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 /**
  * Regular taxpayer GSTIN: 2-digit state code, 10-character PAN, entity number
@@ -21,10 +21,10 @@ const ANY_GSTIN_PATTERN = /^[0-9]{2}[0-9A-Z]{12}[0-9A-Z]$/;
 
 export type GstinError = (typeof GST_ERRORS)[keyof Pick<
   typeof GST_ERRORS,
-  | 'GSTIN_INVALID_LENGTH'
-  | 'GSTIN_INVALID_FORMAT'
-  | 'GSTIN_INVALID_STATE_CODE'
-  | 'GSTIN_INVALID_CHECKSUM'
+  | "GSTIN_INVALID_LENGTH"
+  | "GSTIN_INVALID_FORMAT"
+  | "GSTIN_INVALID_STATE_CODE"
+  | "GSTIN_INVALID_CHECKSUM"
 >];
 
 export interface GstinValidationResult {
@@ -38,7 +38,7 @@ export interface GstinValidationResult {
 
 /** Upper-cases and strips spaces and dashes. */
 export const normalizeGstin = (value: string): string =>
-  (value ?? '').toUpperCase().replace(/[\s-]/g, '');
+  (value ?? "").toUpperCase().replace(/[\s-]/g, "");
 
 /**
  * Computes the GSTIN check character (Luhn mod 36) for the first 14 characters.

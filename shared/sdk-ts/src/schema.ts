@@ -6844,6 +6844,11 @@ export interface components {
              */
             code?: string;
             /**
+             * @description HSN (goods, 4/6/8 digits) or SAC (services, 99xxxx) code
+             * @example 847130
+             */
+            hsnSacCode?: string | null;
+            /**
              * @description Stock level at which the item should be reordered (inventory items only)
              * @example 10
              */
@@ -6968,6 +6973,11 @@ export interface components {
              * @example CHAIR-X2000
              */
             code?: string;
+            /**
+             * @description HSN (goods, 4/6/8 digits) or SAC (services, 99xxxx) code
+             * @example 847130
+             */
+            hsnSacCode?: string | null;
             /**
              * @description Stock level at which the item should be reordered (inventory items only)
              * @example 10
@@ -10946,6 +10956,21 @@ export interface components {
             /** @description Shipping address state */
             shippingAddressState?: string;
             /**
+             * @description GSTIN of the contact (15 characters)
+             * @example 27AAPFU0939F1ZV
+             */
+            gstin?: string | null;
+            /**
+             * @description GST registration type of the contact
+             * @enum {string|null}
+             */
+            gstTreatment?: "registered_regular" | "registered_composition" | "unregistered" | "consumer" | "overseas" | "sez" | "deemed_export" | null;
+            /**
+             * @description Default place of supply: 2-digit GST state code, or '96' for outside India
+             * @example 27
+             */
+            placeOfSupply?: string | null;
+            /**
              * @description Customer type
              * @example business
              */
@@ -11063,6 +11088,21 @@ export interface components {
             shippingAddressPhone?: string;
             /** @description Shipping address state */
             shippingAddressState?: string;
+            /**
+             * @description GSTIN of the contact (15 characters)
+             * @example 27AAPFU0939F1ZV
+             */
+            gstin?: string | null;
+            /**
+             * @description GST registration type of the contact
+             * @enum {string|null}
+             */
+            gstTreatment?: "registered_regular" | "registered_composition" | "unregistered" | "consumer" | "overseas" | "sez" | "deemed_export" | null;
+            /**
+             * @description Default place of supply: 2-digit GST state code, or '96' for outside India
+             * @example 27
+             */
+            placeOfSupply?: string | null;
             /** @description Customer type */
             customerType: string;
             /** @description Salutation */
@@ -11290,6 +11330,21 @@ export interface components {
             shippingAddressPhone?: string;
             /** @description Shipping address state */
             shippingAddressState?: string;
+            /**
+             * @description GSTIN of the contact (15 characters)
+             * @example 27AAPFU0939F1ZV
+             */
+            gstin?: string | null;
+            /**
+             * @description GST registration type of the contact
+             * @enum {string|null}
+             */
+            gstTreatment?: "registered_regular" | "registered_composition" | "unregistered" | "consumer" | "overseas" | "sez" | "deemed_export" | null;
+            /**
+             * @description Default place of supply: 2-digit GST state code, or '96' for outside India
+             * @example 27
+             */
+            placeOfSupply?: string | null;
             /** @description Vendor opening balance */
             openingBalance?: number;
             /**
@@ -11370,6 +11425,21 @@ export interface components {
             shippingAddressPhone?: string;
             /** @description Shipping address state */
             shippingAddressState?: string;
+            /**
+             * @description GSTIN of the contact (15 characters)
+             * @example 27AAPFU0939F1ZV
+             */
+            gstin?: string | null;
+            /**
+             * @description GST registration type of the contact
+             * @enum {string|null}
+             */
+            gstTreatment?: "registered_regular" | "registered_composition" | "unregistered" | "consumer" | "overseas" | "sez" | "deemed_export" | null;
+            /**
+             * @description Default place of supply: 2-digit GST state code, or '96' for outside India
+             * @example 27
+             */
+            placeOfSupply?: string | null;
             /** @description Vendor salutation */
             salutation?: string;
             /** @description Vendor first name */

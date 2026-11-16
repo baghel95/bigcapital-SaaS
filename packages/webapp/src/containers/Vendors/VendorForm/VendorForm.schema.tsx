@@ -1,5 +1,6 @@
 import intl from 'react-intl-universal';
 import * as Yup from 'yup';
+import { contactGstSchema } from '@/components/Gst/ContactGstSection';
 
 const Schema = Yup.object().shape({
   salutation: Yup.string().trim(),
@@ -13,6 +14,8 @@ const Schema = Yup.object().shape({
   workPhone: Yup.string().nullable(),
   personalPhone: Yup.string().nullable(),
   website: Yup.string().url().nullable(),
+
+  ...contactGstSchema,
 
   active: Yup.boolean(),
   note: Yup.string().trim(),

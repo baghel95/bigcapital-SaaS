@@ -1,3 +1,4 @@
+import { validateHsnSac } from '@bigcapital/utils';
 import { defaultTo } from 'lodash';
 import intl from 'react-intl-universal';
 import * as Yup from 'yup';
@@ -20,6 +21,14 @@ const Schema = Yup.object().shape({
     .max(DATATYPES_LENGTH.STRING)
     .label(intl.get('item_type_')),
   code: Yup.string().trim().min(0).max(DATATYPES_LENGTH.STRING),
+  hsnSacCode: Yup.string()
+    .trim()
+    .nullable()
+    .test(
+      'hsn-sac',
+      'HSN must be 4, 6 or 8 digits; SAC must be 6 digits starting with 99.',
+      (value) => !value || validateHsnSac(value).valid,
+    ),
   reorderPoint: Yup.number()
     .transform((value, originalValue) =>
       originalValue === '' ||

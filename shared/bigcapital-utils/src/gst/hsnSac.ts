@@ -1,4 +1,4 @@
-export type HsnSacKind = 'hsn' | 'sac';
+export type HsnSacKind = "hsn" | "sac";
 
 export interface HsnSacValidationResult {
   valid: boolean;
@@ -14,13 +14,13 @@ export interface HsnSacValidationResult {
  * applied by the invoice validator, not here.
  */
 export const validateHsnSac = (value: string): HsnSacValidationResult => {
-  const code = (value ?? '').replace(/[\s.]/g, '');
+  const code = (value ?? "").replace(/[\s.]/g, "");
 
   if (/^99[0-9]{4}$/.test(code)) {
-    return { valid: true, code, kind: 'sac' };
+    return { valid: true, code, kind: "sac" };
   }
-  if (/^[0-9]{4}([0-9]{2}){0,2}$/.test(code) && !code.startsWith('99')) {
-    return { valid: true, code, kind: 'hsn' };
+  if (/^[0-9]{4}([0-9]{2}){0,2}$/.test(code) && !code.startsWith("99")) {
+    return { valid: true, code, kind: "hsn" };
   }
   return { valid: false, code };
 };

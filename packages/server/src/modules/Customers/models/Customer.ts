@@ -48,6 +48,11 @@ export class Customer extends TenantBaseModel {
   personalPhone?: string;
   website?: string;
 
+  // India GST
+  gstin?: string | null;
+  gstTreatment?: string | null;
+  placeOfSupply?: string | null;
+
   billingAddress1?: string;
   billingAddress2?: string;
   billingAddressCity?: string;

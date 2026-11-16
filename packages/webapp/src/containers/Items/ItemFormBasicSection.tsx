@@ -109,6 +109,25 @@ export function ItemFormBasicSection() {
         <FInputGroup name={'code'} fastField fill />
       </FFormGroup>
 
+      {/*----------- HSN / SAC (India GST) ----------*/}
+      <FFormGroup
+        name={'hsnSacCode'}
+        label={'HSN / SAC code'}
+        helperText={
+          'HSN for goods (4, 6 or 8 digits), SAC for services (99xxxx).'
+        }
+        inline={true}
+        fastField
+      >
+        <FInputGroup
+          name={'hsnSacCode'}
+          placeholder={'e.g. 847130 or 998314'}
+          maxLength={10}
+          fastField
+          fill
+        />
+      </FFormGroup>
+
       {/*----------- Unit ----------*/}
       <FFormGroup
         name={'unit'}

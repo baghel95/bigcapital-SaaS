@@ -43,6 +43,7 @@ export function VendorFormContent({
           vertical
         >
           <Tab id={'primary'} title={'Basic'} />
+          <Tab id={'gst'} title={'GST'} />
           <Tab id={'financial'} title={'Financial'} />
           <Tab id={'billingAddress'} title={'Billing address'} />
           <Tab id={'shippingAddress'} title={'Shipping address'} />
