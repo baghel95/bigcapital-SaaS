@@ -1,4 +1,5 @@
 import { Text, Classes, Button, Intent, ButtonProps } from '@blueprintjs/core';
+import { BRAND } from '@/constants/brand';
 import { css } from '@emotion/css';
 import clsx from 'classnames';
 import { lighten } from 'polished';
@@ -113,10 +114,10 @@ export function InvoicePaymentPage({
   payInvoiceButtonProps,
 
   // # Buy note
-  buyNote = 'By confirming your payment, you allow Bigcapital Technology, Inc. to charge you for this payment and save your payment information in accordance with their terms.',
+  buyNote = `By confirming your payment, you allow ${BRAND.legalName} to charge you for this payment and save your payment information in accordance with their terms.`,
 
   // # Copyright
-  copyrightText = `© 2024 Bigcapital Technology, Inc. <br /> All rights reserved.`,
+  copyrightText = `© ${new Date().getFullYear()} ${BRAND.legalName} <br /> All rights reserved.`,
   classNames,
 }: PaymentPageProps) {
   return (

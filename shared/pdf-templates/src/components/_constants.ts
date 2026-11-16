@@ -9,17 +9,15 @@ export const DefaultPdfTemplateItemName = 'Web development';
 export const DefaultPdfTemplateItemDescription =
   'Website development with content and SEO optimization';
 
-export const DefaultPdfTemplateAddressBilledTo = `Bigcapital Technology, Inc.<br />
-131 Continental Dr, <br />
-Suite 305, <br />
-Newark, Delaware 19713, <br />
-United States,<br />
-+1 762-339-5634
+export const DefaultPdfTemplateAddressBilledTo = `Your Customer Pvt Ltd<br />
+12, MG Road, <br />
+Bengaluru, Karnataka 560001, <br />
+India<br />
+GSTIN: 29XXXXX0000X1Z0
 `;
 
-export const DefaultPdfTemplateAddressBilledFrom = `131 Continental Dr Suite 305 Newark, <br />
-Delaware 19713,<br />
-United States, <br />
-+1 762-339-5634, <br />
-ahmed@bigcapital.app
+export const DefaultPdfTemplateAddressBilledFrom = `45, Linking Road, Bandra West, <br />
+Mumbai, Maharashtra 400050, <br />
+India <br />
+GSTIN: 27XXXXX0000X1Z0
 `;

@@ -1,3 +1,4 @@
+import { BRAND_NAME } from '@/common/constants/brand';
 import { Command, CommandRunner } from 'nest-commander';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -29,7 +30,7 @@ export class OpenApiExportCommand extends CommandRunner {
     app.use(new ClsMiddleware({}).use);
 
     const config = new DocumentBuilder()
-      .setTitle('Bigcapital')
+      .setTitle(BRAND_NAME)
       .setDescription('Financial accounting software')
       .setVersion('1.0')
       .build();

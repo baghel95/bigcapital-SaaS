@@ -1,4 +1,5 @@
 import { Text, Classes, Button, Intent } from '@blueprintjs/core';
+import { BRAND } from '@/constants/brand';
 import { css } from '@emotion/css';
 import clsx from 'classnames';
 import styles from './PaymentPortal.module.scss';
@@ -196,9 +197,9 @@ export function PaymentPortal() {
         </Stack>
 
         <Text className={clsx(Classes.TEXT_MUTED, styles.buyNote)}>
-          By confirming your payment, you allow Bigcapital Technology, Inc. to
-          charge you for this payment and save your payment information in
-          accordance with their terms.
+          By confirming your payment, you allow {BRAND.legalName} to charge you
+          for this payment and save your payment information in accordance with
+          their terms.
         </Text>
       </Stack>
 
@@ -210,7 +211,7 @@ export function PaymentPortal() {
         ></Box>
 
         <Stack spacing={0} className={styles.footerText}>
-          © 2024 Bigcapital Technology, Inc.
+          © {new Date().getFullYear()} {BRAND.legalName}
           <br />
           All rights reserved.
         </Stack>

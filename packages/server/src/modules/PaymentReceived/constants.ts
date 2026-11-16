@@ -1,3 +1,5 @@
+import { SAMPLE_COMPANY_NAME } from '@/common/constants/brand';
+
 export const SEND_PAYMENT_RECEIVED_MAIL_QUEUE =
   'SEND_PAYMENT_RECEIVED_MAIL_QUEUE';
 export const SEND_PAYMENT_RECEIVED_MAIL_JOB = 'SEND_PAYMENT_RECEIVED_MAIL_JOB';
@@ -58,7 +60,7 @@ export const defaultPaymentReceivedPdfTemplateAttributes = {
   companyLogoUri: '',
 
   // # Company name
-  companyName: 'Bigcapital Technology, Inc.',
+  companyName: SAMPLE_COMPANY_NAME,
 
   // # Customer address
   showCustomerAddress: true,

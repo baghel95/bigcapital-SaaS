@@ -1,3 +1,5 @@
+import { SAMPLE_COMPANY_NAME } from '@/common/constants/brand';
+
 export const ERRORS = {
   CREDIT_NOTE_NOT_FOUND: 'CREDIT_NOTE_NOT_FOUND',
   REFUND_CREDIT_NOTE_NOT_FOUND: 'REFUND_CREDIT_NOTE_NOT_FOUND',
@@ -92,7 +94,7 @@ export const defaultCreditNoteBrandingAttributes = {
   companyLogoUri: '',
 
   // # Company name
-  companyName: 'Bigcapital Technology, Inc.',
+  companyName: SAMPLE_COMPANY_NAME,
 
   // # Customer address
   showCustomerAddress: true,

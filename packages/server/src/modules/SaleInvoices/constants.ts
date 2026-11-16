@@ -1,3 +1,5 @@
+import { SAMPLE_COMPANY_NAME } from '@/common/constants/brand';
+
 export const SendSaleInvoiceQueue = 'SendSaleInvoiceQueue';
 export const SendSaleInvoiceMailJob = 'SendSaleInvoiceMailJob';
 
@@ -167,7 +169,7 @@ export const defaultInvoicePdfTemplateAttributes = {
   primaryColor: 'red',
   secondaryColor: 'red',
 
-  companyName: 'Bigcapital Technology, Inc.',
+  companyName: SAMPLE_COMPANY_NAME,
 
   showCompanyLogo: true,
   companyLogoKey: '',

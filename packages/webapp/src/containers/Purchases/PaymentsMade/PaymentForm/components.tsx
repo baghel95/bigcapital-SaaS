@@ -49,7 +49,7 @@ const createBillDateCell = (onViewBillDetail?: OnViewBillDetail) => {
     row: { original },
     value,
   }: BillDateCellProps) {
-    const formattedDate = moment(value).format('YYYY MMM DD');
+    const formattedDate = moment(value).format('DD MMM YYYY');
 
     if (!original?.billId) {
       return <span>{formattedDate}</span>;

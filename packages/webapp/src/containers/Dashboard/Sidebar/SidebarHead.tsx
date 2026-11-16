@@ -7,6 +7,7 @@ import {
   MenuDivider,
   Position,
 } from '@blueprintjs/core';
+import { BrandMark } from '@/components/Brand/BrandLogo';
 import styled, { x } from '@xstyled/emotion';
 import * as FF from 'fp-ts/function';
 import { useMemo, useState } from 'react';
@@ -338,12 +339,7 @@ function SidebarHeadJSX({
       </div>
 
       <div className="sidebar__head-logo">
-        <Icon
-          icon={'mini-bigcapital'}
-          width={28}
-          height={28}
-          className="bigcapital--alt"
-        />
+        <BrandMark size={28} />
       </div>
     </div>
   );

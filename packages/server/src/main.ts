@@ -1,3 +1,4 @@
+import { BRAND_NAME } from '@/common/constants/brand';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ClsMiddleware } from 'nestjs-cls';
@@ -22,7 +23,7 @@ async function bootstrap() {
   app.use(new ClsMiddleware({}).use);
 
   const config = new DocumentBuilder()
-    .setTitle('Bigcapital')
+    .setTitle(BRAND_NAME)
     .setDescription('Financial accounting software')
     .setVersion('1.0')
     .build();

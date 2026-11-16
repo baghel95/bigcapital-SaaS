@@ -1,3 +1,4 @@
+import { BRAND_NAME } from '@/common/constants/brand';
 import { castCommaListEnvVarToArray } from '@/utils/cast-comma-list-envvar-Array';
 import { registerAs } from '@nestjs/config';
 import { CountryCode } from 'plaid';
@@ -27,7 +28,7 @@ export default registerAs('plaid', () => ({
   secret: process.env.PLAID_SECRET,
   linkWebhook: process.env.PLAID_LINK_WEBHOOK,
   // Shown to users in Plaid Link; Link shows "This Application" past 30 characters.
-  clientName: process.env.PLAID_CLIENT_NAME || 'Bigcapital',
+  clientName: process.env.PLAID_CLIENT_NAME || BRAND_NAME,
   // Countries enabled in Plaid Link and institution lookups.
   countryCodes: parsePlaidCountryCodes(process.env.PLAID_COUNTRY_CODES),
 }));

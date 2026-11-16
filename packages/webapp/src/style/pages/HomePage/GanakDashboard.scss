@@ -1,0 +1,380 @@
+// Ganak dashboard (home page). Uses the --g-* tokens from _ganak-theme.scss.
+
+.g-dashboard {
+  margin-bottom: 40px;
+
+  &__hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  &__title {
+    font-size: 26px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    color: var(--g-text);
+    margin: 0 0 6px;
+  }
+  &__subtitle {
+    margin: 0;
+    color: var(--g-text-muted);
+    font-size: 14px;
+  }
+}
+
+.g-hero-cta.bp4-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  height: 40px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+  .bp4-icon {
+    color: currentColor;
+    fill: currentColor;
+  }
+}
+
+// KPI cards ------------------------------------------------------------------
+.g-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.g-kpi {
+  --tone: var(--g-primary);
+  display: block;
+  padding: 20px;
+  background: var(--g-surface);
+  border: 1px solid var(--g-border);
+  border-radius: 12px;
+  box-shadow: var(--g-shadow-sm);
+  color: var(--g-text);
+  text-decoration: none;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--g-text);
+    border-color: var(--tone);
+    box-shadow: var(--g-shadow-md);
+    transform: translateY(-1px);
+  }
+
+  &--success {
+    --tone: var(--g-success);
+  }
+  &--warning {
+    --tone: var(--g-warning);
+  }
+  &--danger {
+    --tone: var(--g-danger);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  &__label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--g-text-secondary);
+  }
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    color: var(--tone);
+    background: color-mix(in srgb, var(--tone) 12%, transparent);
+
+    .bp4-icon {
+      color: var(--tone);
+      fill: var(--tone);
+    }
+  }
+  &__value {
+    font-size: 26px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 4px;
+  }
+  &__hint {
+    font-size: 12px;
+    color: var(--g-text-muted);
+  }
+}
+
+// Quick actions --------------------------------------------------------------
+.g-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px 8px 8px;
+    background: var(--g-surface);
+    border: 1px solid var(--g-border);
+    border-radius: 999px;
+    color: var(--g-text);
+    font-weight: 500;
+    font-size: 13px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: var(--g-primary);
+      border-color: var(--g-primary);
+      background: var(--g-primary-subtle);
+    }
+  }
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: var(--g-primary-subtle);
+
+    .bp4-icon {
+      color: var(--g-primary);
+      fill: var(--g-primary);
+    }
+  }
+}
+
+// Cards and tables -----------------------------------------------------------
+.g-card {
+  background: var(--g-surface);
+  border: 1px solid var(--g-border);
+  border-radius: 12px;
+  box-shadow: var(--g-shadow-sm);
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--g-border);
+
+    h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--g-text);
+    }
+  }
+  &__empty {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--g-text-muted);
+
+    p {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.g-link {
+  color: var(--g-primary);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.g-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+
+  th {
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--g-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: var(--g-surface-2);
+  }
+  td {
+    padding: 12px 20px;
+    border-top: 1px solid var(--g-border);
+    color: var(--g-text);
+  }
+  tbody tr:hover td {
+    background: var(--g-surface-2);
+  }
+  .g-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .g-strong {
+    font-weight: 600;
+  }
+  .g-muted {
+    color: var(--g-text-muted);
+  }
+}
+
+// Status pills (shared) -------------------------------------------------------
+.g-pill {
+  --tone: var(--g-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--tone);
+  background: color-mix(in srgb, var(--tone) 12%, transparent);
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--tone);
+  }
+
+  &--success {
+    --tone: var(--g-success);
+  }
+  &--warning {
+    --tone: var(--g-warning);
+  }
+  &--danger {
+    --tone: var(--g-danger);
+  }
+  &--info {
+    --tone: var(--g-primary);
+  }
+}
+
+.g-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--g-text-muted);
+  margin: 8px 0 12px;
+}
+
+// Getting started checklist ---------------------------------------------------
+.g-start {
+  margin-bottom: 16px;
+
+  .g-card__header {
+    border-bottom: 0;
+    padding-bottom: 8px;
+  }
+  &__progress {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: var(--g-text-muted);
+  }
+  &__bar {
+    height: 4px;
+    margin: 0 20px 8px;
+    border-radius: 999px;
+    background: var(--g-surface-2);
+    overflow: hidden;
+
+    span {
+      display: block;
+      height: 100%;
+      background: var(--g-primary);
+      border-radius: 999px;
+      transition: width 200ms ease;
+    }
+  }
+  &__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0 8px 8px;
+  }
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+
+    &:hover {
+      background: var(--g-surface-2);
+    }
+    &.is-done strong {
+      color: var(--g-text-muted);
+      text-decoration: line-through;
+    }
+  }
+  &__check {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--g-border-strong);
+
+    .is-done & {
+      background: var(--g-success);
+      border-color: var(--g-success);
+
+      .bp4-icon {
+        color: #fff;
+        fill: #fff;
+      }
+    }
+  }
+  &__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--g-text);
+    }
+    span {
+      font-size: 12.5px;
+      color: var(--g-text-muted);
+    }
+  }
+  &__cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--g-primary);
+    white-space: nowrap;
+  }
+}

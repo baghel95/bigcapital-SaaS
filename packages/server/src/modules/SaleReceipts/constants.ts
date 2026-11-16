@@ -1,3 +1,5 @@
+import { SAMPLE_COMPANY_NAME } from '@/common/constants/brand';
+
 export const DEFAULT_RECEIPT_MAIL_SUBJECT =
   'Receipt {Receipt Number} from {Company Name}';
 
@@ -72,7 +74,7 @@ export const SaleReceiptsSampleData = [
 export const defaultSaleReceiptBrandingAttributes = {
   primaryColor: '',
   secondaryColor: '',
-  companyName: 'Bigcapital Technology, Inc.',
+  companyName: SAMPLE_COMPANY_NAME,
 
   // # Company logo
   showCompanyLogo: true,

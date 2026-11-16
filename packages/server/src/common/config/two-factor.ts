@@ -1,3 +1,4 @@
+import { BRAND_NAME } from '@/common/constants/brand';
 import { registerAs } from '@nestjs/config';
 
 export default registerAs('twoFactor', () => ({
@@ -11,5 +12,5 @@ export default registerAs('twoFactor', () => ({
   /**
    * Issuer name shown in authenticator apps.
    */
-  issuer: process.env.TWO_FACTOR_ISSUER || 'Bigcapital',
+  issuer: process.env.TWO_FACTOR_ISSUER || BRAND_NAME,
 }));
