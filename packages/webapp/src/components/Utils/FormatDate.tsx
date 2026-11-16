@@ -10,8 +10,9 @@ interface FormatDateProps {
 /**
  * Format the given date.
  */
-export function FormatDate({ value, format = 'YYYY MMM DD' }: FormatDateProps) {
-  const localizedFormat = intl.get(`date_formats.${format}`);
+export function FormatDate({ value, format = 'DD MMM YYYY' }: FormatDateProps) {
+  // Use the language's version of the format when it defines one.
+  const localizedFormat = intl.get(`date_formats.${format}`) || format;
 
   return <>{moment(value).format(localizedFormat)}</>;
 }

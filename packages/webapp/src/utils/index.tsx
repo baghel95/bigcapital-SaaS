@@ -3,6 +3,8 @@ import { Intent } from '@blueprintjs/core';
 import accounting from 'accounting';
 import clsx from 'classnames';
 import jsCookie from 'js-cookie';
+import './currency-overrides';
+import { applyIndianGrouping, usesIndianGrouping } from '@bigcapital/utils';
 import Currencies from 'js-money/lib/currency';
 import Currency from 'js-money/lib/currency';
 import _ from 'lodash';
@@ -221,7 +223,12 @@ export function formattedAmount(cents, currencyCode = '', props = {}) {
     },
   };
 
-  return accounting.formatMoney(cents, formatOptions);
+  const formatted = accounting.formatMoney(cents, formatOptions);
+
+  // Lakh/crore grouping (1,00,000) for rupee amounts.
+  return usesIndianGrouping(currencyCode)
+    ? applyIndianGrouping(formatted)
+    : formatted;
 }
 
 export function formattedNumber(amount, props) {

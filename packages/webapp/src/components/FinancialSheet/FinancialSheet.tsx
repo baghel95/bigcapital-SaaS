@@ -95,7 +95,7 @@ export function FinancialSheet({
         )}
         {currentDate && (
           <FinancialSheetFooterCurrentTime>
-            {moment().format('YYYY MMM DD HH:mm')}
+            {moment().format('DD MMM YYYY, HH:mm')}
           </FinancialSheetFooterCurrentTime>
         )}
       </FinancialSheetFooter>

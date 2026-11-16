@@ -7,13 +7,14 @@ import { useOrganizationSetup } from '@/hooks/query';
 import { setCookie, transfromToSnakeCase } from '@/utils';
 
 // Initial values.
+// Ganak is India-first: start from Indian defaults, all still editable.
 const defaultValues: SetupOrganizationFormValues = {
   name: '',
-  location: '',
-  baseCurrency: '',
+  location: 'IN',
+  baseCurrency: 'INR',
   language: 'en',
-  fiscalYear: '',
-  timezone: '',
+  fiscalYear: 'april',
+  timezone: 'Asia/Kolkata',
 };
 
 export interface SetupOrganizationPageProps {

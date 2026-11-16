@@ -42,7 +42,7 @@ const createInvoiceDateCell = (onViewInvoiceDetail?: OnViewInvoiceDetail) => {
     row: { original },
     value,
   }: InvoiceDateCellProps) {
-    const formattedDate = moment(value).format('YYYY MMM DD');
+    const formattedDate = moment(value).format('DD MMM YYYY');
 
     if (!original?.invoiceId) {
       return <span>{formattedDate}</span>;

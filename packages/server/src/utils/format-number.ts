@@ -1,6 +1,7 @@
 import { get } from 'lodash';
 import * as accounting from 'accounting';
-import * as Currencies from 'js-money/lib/currency';
+import { applyIndianGrouping, usesIndianGrouping } from '@bigcapital/utils';
+import { Currencies } from './currency-overrides';
 
 const getNegativeFormat = (formatName) => {
   switch (formatName) {
@@ -52,7 +53,7 @@ export const formatNumber = (
   if (divideOn1000) {
     formattedBalance /= 1000;
   }
-  return accounting.formatMoney(
+  const formatted = accounting.formatMoney(
     formattedBalance,
     money ? formattedSymbol : symbol ? symbol : '',
     precision,
@@ -64,4 +65,8 @@ export const formatNumber = (
       zero: excerptZero ? zeroSign : format,
     },
   );
+  // Lakh/crore grouping (1,00,000) for rupee amounts.
+  return usesIndianGrouping(currencyCode) && thousand
+    ? applyIndianGrouping(formatted, thousand, decimal)
+    : formatted;
 };
